@@ -1,0 +1,7 @@
+<ngb-tabset>
+  <ngb-tab *ngFor="let semester of semesters$|async" [title]="'Εξ. ' + semester.name">
+    <ng-template ngbTabContent>
+      <app-semester-courses [semester]="semester"></app-semester-courses>
+    </ng-template>
+  </ngb-tab>
+</ngb-tabset>

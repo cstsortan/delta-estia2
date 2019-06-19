@@ -1,0 +1,20 @@
+.home {
+	padding-bottom: 20px;
+	min-height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.showMoreButton{
+	width: 100%;
+	align-self: center;
+	max-width: 500px;
+	margin-top: 10px;
+	outline: none;
+	border: none;
+	user-select: none;
+	color: white;
+	background-color: #7600BB;
+	padding: 8px;
+}

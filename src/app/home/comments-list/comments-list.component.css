@@ -1,0 +1,21 @@
+.commentsList {
+    max-height: 200px;
+    margin: 10px 0;
+    overflow-y: auto;
+    width: 100%;
+ }
+ 
+ .showComments {
+    width: 100%;
+    font-size: 12px;
+    margin: 20px;
+    padding-left: 20px;
+    color: #7600BB;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+ }
+ .showCommentsIcon {
+    margin-right: 10px;
+ }
+ 

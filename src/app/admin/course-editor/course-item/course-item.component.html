@@ -1,0 +1,21 @@
+<div class="card mt-2 shadow-sm">
+  <div class="card-header">{{ course.name }}</div>
+  <div class="card-body">
+    <div ngbDropdown class="d-inline-block alert alert-info">
+      Διδάσκοντες
+      <button class="btn btn-outline-primary d-inline" id="add-course-instructor" ngbDropdownToggle>Προσθήκη</button>
+      <div ngbDropdownMenu aria-labelledby="add-course-instructor">
+        <button *ngFor="let instructor of allInstructors$|async" class="dropdown-item" (click)="addCourseInstructor(instructor)">{{instructor.name}}</button>
+      </div>
+    </div>
+    <div *ngFor="let instructor of course.instructors|instructors">
+      {{instructor.name}}
+      <span>
+        <button class="btn btn-danger btn-sm m-1" (click)="removeCourseInstructor(instructor)">x</button>
+      </span>
+    </div>
+  </div>
+  <div class="card-footer">
+    <button (click)="deleteCourse()" class="btn btn-danger">Delete</button>
+  </div>
+</div>

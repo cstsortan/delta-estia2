@@ -1,0 +1,7 @@
+<div class="commentList">
+  <app-comment-item
+  *ngFor="let comment of comments$|async"
+  [comment]="comment">
+
+  </app-comment-item>
+</div>

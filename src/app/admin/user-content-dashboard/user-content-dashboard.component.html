@@ -1,0 +1,9 @@
+<div class="p-2">
+  <div class="row">
+    <div class="col">
+      <div *ngFor="let content of userContent$|async" class="my-4">
+        <app-user-content-item [content]="content"></app-user-content-item>
+      </div>
+    </div>
+  </div>
+</div>

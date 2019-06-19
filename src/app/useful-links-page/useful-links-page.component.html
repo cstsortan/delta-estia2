@@ -1,0 +1,15 @@
+<!-- <div class="card my-1">
+  <div class="card-header">
+    Χρήσιμοι σύνδεσμοι
+  </div>
+  <div class="card-body">
+
+  </div>
+</div> -->
+
+<div class="my-1">
+  <app-content-card 
+  title="Χρήσιμοι σύνδεσμοι"
+  [contents]="usefulLinks$ | async"
+  ></app-content-card>
+</div>

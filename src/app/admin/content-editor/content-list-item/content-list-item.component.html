@@ -1,0 +1,19 @@
+<div class="card shadow-sm mt-2">
+  <div class="card-header">
+    {{content.name}}
+  </div>
+  <div class="card-body">
+    <p class="card-title">Μάθημα: {{(course$|async)?.name}}</p>
+    <p class="card-text">{{content.description}}</p>
+    <a *ngIf="content.fileLink !== ''" target="_blank" [href]="content.fileLink">{{content.name}} (αρχείο)</a>
+    <a *ngIf="content.otherLink !== ''" target="_blank" [href]="content.otherLink">{{content.otherLink}} (εξωτερικό λίνκ)</a>
+    <p>Added  : {{ content.timestamp | date }}</p>
+  </div>
+  <div class="card-footer">
+    <button
+      (click)="delete()" 
+      class="btn btn-danger">
+      Delete
+    </button>
+  </div>
+</div>

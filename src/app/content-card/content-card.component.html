@@ -1,0 +1,12 @@
+<div class="card">
+  <div class="card-header">{{title}}</div>
+  <div class="card-body">
+    <div *ngFor="let content of contents">
+      <div class="alert alert-info m-1">
+        <p>{{ content?.description }}</p>
+        <a *ngIf="content.otherLink!==''" href="{{ content.otherLink }}">{{content.name}}(εξωτερικός σύνδεσμος)</a>
+        <a *ngIf="content.fileLink!==''" href="{{ content.fileLink }}">{{content.name}}(αρχείο)</a>
+      </div>
+    </div>
+  </div>
+</div>

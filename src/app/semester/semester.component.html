@@ -1,0 +1,19 @@
+<div *ngIf="semester$|async; let sem" class="">
+  <h1 class="lead alert alert-info p-2 mt-3">{{ sem.name }}' Εξάμηνο</h1>
+  <ngb-accordion #acc="ngbAccordion" activeIds="desc, courses">
+    <ngb-panel title="Περιγραφή" id="desc">
+      <ng-template ngbPanelContent>
+        <p>{{ sem.description }}</p>
+      </ng-template>
+    </ngb-panel>
+    <ngb-panel title="Μαθήματα" id="courses">
+      <ng-template ngbPanelContent>
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-4" *ngFor="let course of courses$|async">
+            <app-course [course]="course"></app-course>
+          </div>
+        </div>
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>
+</div>

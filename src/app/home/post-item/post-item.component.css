@@ -1,0 +1,76 @@
+.postRoot {
+    border: 1px solid #8F00BB;
+    border-radius: 4px;
+    font-size: 20px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.postImage {
+    max-height: 200px;
+    width: auto;
+    max-width: 85%;
+    margin-bottom: 20px;
+}
+
+.postText {
+    margin: 20px 0;
+    padding: 0 20px;
+    text-align: justify;
+
+}
+
+.postFloor {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 20px;
+    padding-right: 20px;
+    font-size: 15px;
+    align-items: flex-end;
+}
+
+.commentsForm {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.commentsSubmitButton {
+    margin-left: 10px;
+}
+.commentsInput {
+    flex: 1;
+    padding-left: 16px;
+    border-radius: 8px;
+    border-width: 1px;
+    outline: none;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.commentsInput::placeholder {
+    font-style: italic;
+}
+
+.color-red {
+	color: red;
+}
+
+.color-green {
+	color: green;
+}
+
+.color-blue {
+	color: blue;
+}
+
+.color-purple {
+	color: purple;
+}
+
+.color-pink {
+	color: palevioletred;
+}

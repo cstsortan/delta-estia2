@@ -1,0 +1,39 @@
+.commentRoot {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #7600BB;
+}
+
+.commentAuthor {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.commentAuthorName {
+    font-size: 14px;
+    margin-left: 20px;
+}
+
+.commentAuthorPhoto {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+
+.commentText {
+    padding: 5px;
+    font-size: 16px;
+}
+
+.commentTimestamp {
+
+}
+.emojis {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    margin: 10px;
+    justify-content: space-evenly;
+}

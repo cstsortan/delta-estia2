@@ -1,0 +1,37 @@
+<div class="newPostRoot">
+  <div class="floorRoot">
+    <label class="floorLabel" for="floor">Όροφος</label>
+    <select [(ngModel)]="floor">
+        <option [value]="-3">Ισόγειο</option>
+        <option [value]="-2">1ος</option>
+        <option [value]="-1">2ος</option>
+        <option [value]="0">3ος</option>
+        <option [value]="1">4ος</option>
+        <option [value]="2">5ος</option>
+        <option [value]="3">6ος</option>
+        <option [value]="4">7ος</option>
+        <option [value]="5">8ος</option>
+        <option [value]="6">9ος</option>
+        <option [value]="7">10ος</option>
+    </select>
+    <label for="color">Χρήμα</label>
+    <select [(ngModel)]="color">
+        <option value="default">Μαύρο</option>
+        <option value="red">Κόκκινο</option>
+        <option value="blue">Μπλέ</option>
+        <option value="green">Πράσινο</option>
+        <option value="purple">Μωβ</option>
+        <option value="pink">Ροζ</option>
+    </select>
+  </div>
+    <textarea class="newPostText" [(ngModel)]="text" placeholder="Πες κάτι που δε ξέρει κανείς...">
+      
+    </textarea>
+    <input class="newPostFileInput"
+    type="file"
+    (change)="onImageChanged($event.target.files)">
+  <div class="newPostPhotoInput">
+    <img *ngIf="imageUrl" class="newPostPhoto" [src]="imageUrl">
+  </div>  
+  <button class="newPostSubmitButton" (click)="onSubmitted()">Αποστολή</button>
+</div>

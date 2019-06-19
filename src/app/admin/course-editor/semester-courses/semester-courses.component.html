@@ -1,0 +1,17 @@
+<div class="m-2">
+  <hr>
+  <form >
+    <div class="form-group">
+      <input [(ngModel)]="newCourse.name" class="form-control" name="name" type="text" placeholder="Name of the course">
+    </div>
+    <div class="form-group">
+      <input (click)="addCourse()" type="button" class="btn btn-primary" value="Add">
+    </div>
+  </form>
+</div>
+<hr>
+<div class="row">
+  <div class="col-12 col-sm-12 col-md-6 col-lg-4" *ngFor="let course of courses$ | async">
+    <app-course-item [course]="course"></app-course-item>
+  </div>
+</div>

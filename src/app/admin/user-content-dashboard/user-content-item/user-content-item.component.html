@@ -1,0 +1,79 @@
+<div class="card shadow">
+  <ng-container *ngIf="isEditing; else notEditing">
+    <div class="card-body">
+      <form>
+        <div class="form-group">
+          <input [(ngModel)]="editableContent.name" type="text" class="form-control" name="name" placeholder="Όνομα">
+        </div>
+        <div class="form-group">
+          <input [(ngModel)]="editableContent.description" type="text" class="form-control" name="desc" placeholder="Περιγραφή">
+        </div>
+        <div class="form-group">
+          <input [(ngModel)]="editableContent.otherLink" type="text" class="form-control" name="link" placeholder="εξωτερικό λίνκ">
+        </div>
+        <div class="form-group">
+            <select [(ngModel)]="editableContent.courseId" class="form-control" name="courseSelelection" id="courseSelelection">
+              <option *ngFor="let c of courses$|async" [value]="c.id">
+                {{c.name}}
+              </option>
+            </select>
+          </div>
+          <!-- TYPE -->
+          <div class="form-group">
+            <label for="contentTypeSelect">Type</label>
+            <select [(ngModel)]="editableContent.type" class="form-control" name="contentTypeSelect">
+              <option value="notes">Σημειώσεις</option>
+              <option value="questions">Θέματα</option>
+              <option value="material">Ύλη Μαθήματος</option>
+              <option value="other">Άλλο</option>
+            </select>
+          </div>
+          <div (click)="save()" class="btn btn-primary">
+            Αποθήκευση
+          </div>
+          <div (click)="cancel()" class="btn btn-outline-danger">
+            Ακύρωση
+          </div>
+      </form>
+    </div>
+  </ng-container>
+  <ng-template #notEditing>
+    <div class="card-header">
+      <div class="row">
+        <div class="col-auto">
+          {{ content.name }}
+          <span class="badge badge-pill badge-info p-2">{{ content.type | contentType }}</span>
+          <div (click)="edit()" *ngIf="!content.isPublished" class="btn btn-outline-primary">Επεξεργασία</div>
+        </div>
+        <div class="col"></div>
+        <div class="col-auto">
+          <ng-container *ngIf="!content.isPublished; else publishedTag">
+            <button (click)="publish()" class="btn btn-success">
+              Δημοσίευση
+            </button>
+          </ng-container>
+          <ng-template #publishedTag>
+            <span class="badge badge-pill badge-success p-2">
+              Δημοσιεύτηκε
+            </span>
+          </ng-template>
+        </div>
+        <div class="col-auto">
+          <button (click)="delete()" class="btn btn-danger">
+            Διαγραφή
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div>Μάθημα: {{ (course$ | async)?.name }}</div>
+      <p *ngIf="content.description !== ''">Περιγραφή: {{ content.description }}</p>
+      <div *ngIf="content.fileLink !== ''">Αρχείο:
+        <a target="_blank" [href]="content.fileLink"></a>
+      </div>
+      <div *ngIf="content.otherLink !== ''">Εξωτερικό λίνκ:
+        <a target="_blank" [href]="content.otherLink"></a>
+      </div>
+    </div>
+  </ng-template>
+</div>

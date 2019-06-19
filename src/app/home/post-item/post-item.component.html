@@ -1,0 +1,18 @@
+<div class="postRoot">
+  <p [class]="'postText color-'+post.color">{{post.text}}</p>
+  <img class="postImage" [src]="post.imageUrl" />
+  <div class="postFloor">
+    {{post.floor === -3 ? 'Ισόγειο' : (post.floor+3)+'ος Όροφος'}}
+  </div>
+  <div class="commentsForm">
+    <input
+      [(ngModel)]="text"
+      class="commentsInput"
+      type="text"
+      placeholder="Σχολιάστε"
+    />
+    <fa-icon (click)="sendComment()" style="color: purple;" [size]="'lg'" [icon]="faArrowAltCircleRight"></fa-icon>
+ </div>
+
+  <app-comments-list class="mb-2" [postId]="post.id"></app-comments-list>
+</div>

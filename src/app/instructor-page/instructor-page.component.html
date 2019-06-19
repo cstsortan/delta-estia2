@@ -1,0 +1,12 @@
+<div class="m-2" *ngIf="instructor$|async; let instructor">
+  <div class="alert alert-primary">
+    <p class="lead">{{instructor.name}}</p>
+    <a [href]="instructor.link">{{instructor.link}}</a> 
+  </div>
+
+  <div class="row">
+    <div *ngFor="let course of courses$|async" class="col col-md-6 col-lg-4">
+      <app-course [course]="course"></app-course>
+    </div>    
+  </div>
+</div>

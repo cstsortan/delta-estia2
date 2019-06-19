@@ -1,0 +1,25 @@
+<hr>
+<form>
+  <div class="form-group">
+    <label for="name">Instructor Name</label>
+    <input [(ngModel)]="currentInstructor.name" name="name" type="text" class="form-control" id="name" placeholder="Enter their name">
+  </div>
+  <div class="form-group">
+    <label for="link">Link</label>
+    <input [(ngModel)]="currentInstructor.link" name="link" type="text" class="form-control" id="link" placeholder="Enter a link">
+  </div>
+  <button (click)="submitInstructor()" type="submit" class="btn btn-primary">Submit</button>
+</form>
+<hr>
+<div class="row">
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let instructor of instructors$|async">
+    <div class="card p-1 m-1">
+      <div class="card-body">
+        <p>{{instructor.id}}</p>
+        <a target="_blank" class="d-block" [href]="instructor.link">{{instructor.name}}</a>
+        <hr>
+        <button class="btn btn-danger" (click)="deleteInstructor(instructor)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

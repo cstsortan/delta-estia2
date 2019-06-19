@@ -1,0 +1,5 @@
+<div class="m-1 m-md-2 m-lg-4 row">
+  <div class="col-12 col-md-6 col-lg-3" *ngFor="let c of content$|async; trackBy: trackByFn">
+    <app-content-list-item [content]="c"></app-content-list-item>
+  </div>
+</div>
