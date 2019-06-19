@@ -6,6 +6,7 @@ import { AdminComponent } from './admin/admin.component';
 import { CoursePageComponent } from './course-page/course-page.component';
 import { UsefulLinksPageComponent } from './useful-links-page/useful-links-page.component';
 import { InstructorPageComponent } from './instructor-page/instructor-page.component';
+import { FoodComponent } from './food/food.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'instructor/:id',
     component: InstructorPageComponent,
+  },
+  {
+    path: 'food',
+    component: FoodComponent,
   }
 ];
 

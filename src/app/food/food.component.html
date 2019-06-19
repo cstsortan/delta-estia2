@@ -1,0 +1,2 @@
+<img class="img-fluid" [src]="currentImage$|async">
+<input *ngIf="isAdmin$|async" type="file" (change)="uploadStatus($event.target.files[0])">

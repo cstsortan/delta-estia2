@@ -43,6 +43,7 @@ import { CommentItemComponent } from './home/comment-item/comment-item.component
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NewPostModalComponent } from './home/new-post-modal/new-post-modal.component';
+import { FoodComponent } from './food/food.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +75,7 @@ import { NewPostModalComponent } from './home/new-post-modal/new-post-modal.comp
     CommentsListComponent,
     CommentItemComponent,
     NewPostModalComponent,
+    FoodComponent,
   ],
   imports: [
     BrowserModule,
