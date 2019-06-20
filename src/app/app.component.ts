@@ -13,11 +13,14 @@ import { UserFacingContentFormComponent } from './user-facing-content-form/user-
 export class AppComponent {
   semesters$: Observable<Semester[]>;
 
+  isAdmin$: Observable<boolean>;
+
   constructor(
     private data: DataService,
     private modal: NgbModal,
   ) {
     this.semesters$ = data.getSemesters();
+    this.isAdmin$ = data.isAdmin();
   }
 
   openUserFacingContentForm() {

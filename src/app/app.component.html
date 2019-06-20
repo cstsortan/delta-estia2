@@ -30,6 +30,9 @@
           <a routerLinkActive="active" class=nav-link routerLink="/forum">Forum</a>
         </li>
         <li class="nav-link">
+            <a routerLinkActive="active" class=nav-link routerLink="/food">Φαγητό</a>
+          </li>
+        <li *ngIf="isAdmin$|async" class="nav-link">
           <a routerLinkActive="active" class="nav-link" routerLink="/admin">Admin</a>
         </li>
         <li class="nav-link">
