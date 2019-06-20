@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="m-2">
+    <input class="form-control my-2" [(ngModel)]="newTag.name" placeholder="Tag Name">
+    <input class="form-control my-2" [(ngModel)]="newTag.description" placeholder="Tag description">
+    <input class="w-50 my-2 mx-auto" type="color" [value]="newTag.colour" (change)="colorChanged($event.target.value)">
+    <button class="btn btn-outline-primary" (click)="createTag()">Add Tag</button>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-12 col-md-6 col-lg-4" *ngFor="let tag of tags$|async">
+      <div class="card m-2">
+        <div class="card-content">
+          {{ tag.name }} - {{ tag.description }}
+          <button (click)="deleteTag(tag.id)" class="btn btn-danger">
+            Delete
+          </button>
+        </div>
+        <div class="m-3" [style.backgroundColor]="tag.colour"></div>
+      </div>
+    </div>
+  </div>
+</div>

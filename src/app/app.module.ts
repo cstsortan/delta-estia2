@@ -45,6 +45,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NewPostModalComponent } from './home/new-post-modal/new-post-modal.component';
 import { FoodComponent } from './food/food.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { TagsEditorComponent } from './admin/tags-editor/tags-editor.component';
 
 @NgModule({
   declarations: [
@@ -77,6 +78,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     CommentItemComponent,
     NewPostModalComponent,
     FoodComponent,
+    TagsEditorComponent
   ],
   imports: [
     BrowserModule,
