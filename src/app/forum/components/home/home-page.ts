@@ -132,7 +132,6 @@ export class HomePage extends LitElement {
     }
 
     render() {
-        console.log("Rendering... ", JSON.stringify(this))
         if(!this.route.tag) {
             if(this.route.routeName === "new-post") {
                 return html`

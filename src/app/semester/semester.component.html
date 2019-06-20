@@ -1,4 +1,4 @@
-<div *ngIf="semester$|async; let sem" class="">
+<div *ngIf="semester$|async; let sem" class="container">
   <h1 class="lead alert alert-info p-2 mt-3">{{ sem.name }}' Εξάμηνο</h1>
   <ngb-accordion #acc="ngbAccordion" activeIds="desc, courses">
     <ngb-panel title="Περιγραφή" id="desc">

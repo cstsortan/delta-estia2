@@ -1,31 +1,34 @@
-<button routerLink="/semester/{{ (course$|async)?.semesterId }}" class="btn btn-sm btn-outline-info m-2">πίσω</button>
-<div class="p-3">
-  <div class="row">
-
-    <!-- INSTRUCTORS -->
-    <div class="col-12 m-0 p-1">
-      <div class="card">
-        <div class="card-header">
-          <h3>{{(course$|async)?.name}}</h3>
-        </div>
-        <div class="card-body">
-          Διδάσκοντες:
-          <div *ngFor="let instructor of (course$|async)?.instructors | instructors">
-            <!-- <a target="_blank" [href]="instructor.link">{{ instructor.name }}</a> -->
-            <a routerLink="/instructor/{{instructor.id}}">{{instructor.name}}</a>
+<div class="container">
+    <button routerLink="/semester/{{ (course$|async)?.semesterId }}" class="btn btn-sm btn-outline-info m-2">πίσω</button>
+    <div class="p-3">
+      <div class="row">
+    
+        <!-- INSTRUCTORS -->
+        <div class="col-12 m-0 p-1">
+          <div class="card">
+            <div class="card-header">
+              <h3>{{(course$|async)?.name}}</h3>
+            </div>
+            <div class="card-body">
+              Διδάσκοντες:
+              <div *ngFor="let instructor of (course$|async)?.instructors | instructors">
+                <!-- <a target="_blank" [href]="instructor.link">{{ instructor.name }}</a> -->
+                <a routerLink="/instructor/{{instructor.id}}">{{instructor.name}}</a>
+              </div>
+            </div>
           </div>
+        </div>
+    
+        <div class="p-1 col-12 col-md-6 my-2">
+          <app-content-card [contents]="lectureNotes$|async" title="Σημειώσεις:"></app-content-card>
+          <div class="my-1"></div>
+          <app-content-card [contents]="courseMaterial$|async" title="Ύλη μαθήματος"></app-content-card>
+        </div>
+    
+        <div class="p-1 col-12 col-md-6 my-2">
+          <app-content-card [contents]="questions$|async" title="Θέματα"></app-content-card>
         </div>
       </div>
     </div>
-
-    <div class="p-1 col-12 col-md-6 my-2">
-      <app-content-card [contents]="lectureNotes$|async" title="Σημειώσεις:"></app-content-card>
-      <div class="my-1"></div>
-      <app-content-card [contents]="courseMaterial$|async" title="Ύλη μαθήματος"></app-content-card>
-    </div>
-
-    <div class="p-1 col-12 col-md-6 my-2">
-      <app-content-card [contents]="questions$|async" title="Θέματα"></app-content-card>
-    </div>
-  </div>
+    
 </div>
