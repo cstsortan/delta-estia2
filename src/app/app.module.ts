@@ -44,6 +44,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NewPostModalComponent } from './home/new-post-modal/new-post-modal.component';
 import { FoodComponent } from './food/food.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @NgModule({
   declarations: [
@@ -100,6 +101,9 @@ import { FoodComponent } from './food/food.component';
     ContentFormComponent,
     UserFacingContentFormComponent,
     NewPostModalComponent,
-  ]
+  ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ],
 })
 export class AppModule { }

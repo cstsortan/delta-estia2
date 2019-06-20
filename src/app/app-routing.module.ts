@@ -36,6 +36,10 @@ const routes: Routes = [
   {
     path: 'food',
     component: FoodComponent,
+  },
+  {
+    path: 'forum',
+    loadChildren: './forum/forum.module#ForumModule',
   }
 ];
 
