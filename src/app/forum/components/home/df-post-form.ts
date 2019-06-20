@@ -119,18 +119,18 @@ export class DfPostForm extends LitElement {
                     </select>
                 </div>
                 <div class="title-field">
-                    <label for="title">Enter a title</label>
+                    <label for="title">Τίτλος</label>
                     <input
                         @change="${(e: any) => this.post.title = e.target.value}"
                         .value="${this.post.title}"
-                        required class="" type="text" id="title" placeholder="New angular content...">
+                        required class="" type="text" id="title" placeholder="Γράψτε έναν τίτλο συζήτησης">
                 </div>
                 <div class="text-field">
-                    <label for="text">Enter some text for your post</label>
+                    <label for="text">Θέμα</label>
                     <textarea 
                         @change="${(e: any) => this.post.text = e.target.value}"
                         .value="${this.post.text}"
-                        required id="text" placeholder="New features released..."></textarea>
+                        required id="text" placeholder="Περιγράψτε το θέμα της συζήτησής σας..."></textarea>
                 </div>
             </form>
         `;
