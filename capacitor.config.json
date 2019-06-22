@@ -1,0 +1,12 @@
+{
+  "appId": "com.d4vinci.deltaestia",
+  "appName": "Delta Estia",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "dist/delta-estia2",
+  "plugins": {
+    "SplashScreen": {
+      "showSpinner": true
+    }
+  }
+}
