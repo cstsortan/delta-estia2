@@ -1,11 +1,12 @@
 <div class="container-fluid pl-0 pr-0">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top fixed-top">
-    <a class="navbar-brand" routerLink="">Delta Estia</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-      aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+  <cs-appbar>
+    <a class="navbar-brand">Delta Estia</a>
+    <button (click)="openDrawer()" slot="start" class="navbar-toggler h-100 d-flex align-items-center">
+      <fa-icon [icon]="faBars"></fa-icon>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  </cs-appbar>
+  <side-drawer #drawer>
+    <div class="mx-2">
       <ul class="navbar-nav mr-auto">
         <!-- <li class="nav-link">
           <a routerLink="/" class="nav-link">Αρχική</a>
@@ -36,14 +37,13 @@
           <a routerLinkActive="active" class="nav-link" routerLink="/admin">Admin</a>
         </li>
         <li class="nav-link">
-          <button (click)="openUserFacingContentForm()" class="btn btn-outline-light">
+          <button (click)="openUserFacingContentForm()" class="btn btn-outline-primary">
             Προτείνετε περιεχόμενο
           </button>
         </li>
       </ul>
     </div>
-  </nav>
-
+  </side-drawer>
   <div class="">
     <router-outlet></router-outlet>
   </div>
