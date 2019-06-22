@@ -7,6 +7,7 @@ import * as firebase from 'firebase/app';
 import { Router } from '@angular/router';
 import { PostComment } from '../models/post-comment';
 import { tap, map } from 'rxjs/operators';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,7 @@ constructor(
   private db: AngularFirestore,
   private auth: AngularFireAuth,
   private router: Router,
+  private authService: AuthService,
 ) {}
 
   getPosts(limit: number = 10): Observable<Post[]> {
@@ -42,7 +44,7 @@ constructor(
   async postComment(postId: string, text: string) {
     const user = firebase.auth().currentUser;
     if (!user) {
-      await this.auth.auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider());
+      this.authService.openLoginModal();
       return;
     }
 

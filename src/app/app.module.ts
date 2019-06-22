@@ -46,6 +46,10 @@ import { NewPostModalComponent } from './home/new-post-modal/new-post-modal.comp
 import { FoodComponent } from './food/food.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { TagsEditorComponent } from './admin/tags-editor/tags-editor.component';
+import { AuthModalComponent } from './auth-modal/auth-modal.component';
+
+import { defineCustomElements } from 'cstsortan-components/loader';
+defineCustomElements(window);
 
 @NgModule({
   declarations: [
@@ -78,7 +82,8 @@ import { TagsEditorComponent } from './admin/tags-editor/tags-editor.component';
     CommentItemComponent,
     NewPostModalComponent,
     FoodComponent,
-    TagsEditorComponent
+    TagsEditorComponent,
+    AuthModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -103,6 +108,7 @@ import { TagsEditorComponent } from './admin/tags-editor/tags-editor.component';
     ContentFormComponent,
     UserFacingContentFormComponent,
     NewPostModalComponent,
+    AuthModalComponent,
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

@@ -1,10 +1,10 @@
 import * as firebase from 'firebase/app';
 import { AppUser } from "../../interfaces/app-user";
+import * as ui from 'firebaseui';
 
 export class DfUiAuth extends HTMLElement {
 
-    async connectedCallback() {
-        const [ui] = await Promise.all([import('firebaseui')]);
+    connectedCallback() {
         const fbUi = ui.auth.AuthUI.getInstance() ||  new ui.auth.AuthUI(firebase.auth());
         fbUi.start(this, {
             signInOptions: [
@@ -13,12 +13,12 @@ export class DfUiAuth extends HTMLElement {
                     authMethod: 'https://accounts.google.com',
                     clientId: '975027577006-qi4o5qo01uflacv6osvo42appm6jmg2u.apps.googleusercontent.com',
                 },
-                {
-                    provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
-                    requireDisplayName: true,
-                }
+                // {
+                //     provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
+                //     requireDisplayName: true,
+                // }
             ],
-            signInFlow: 'popup',
+            signInFlow: 'redirect',
             credentialHelper: ui.auth.CredentialHelper.GOOGLE_YOLO,
             callbacks: {
                 signInSuccessWithAuthResult: (authResult, redirectUrl) => {

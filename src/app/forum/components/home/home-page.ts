@@ -56,7 +56,7 @@ export class HomePage extends LitElement {
             store.dispatch(navigate('new-post'));
         }
         else {
-            store.dispatch(navigate('auth'));
+            this.dispatchEvent(new CustomEvent('should-login'));
         }
     }
 
