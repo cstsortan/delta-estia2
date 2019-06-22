@@ -269,7 +269,7 @@ export class PostPage extends LitElement {
                         .style="background-color: ${this.post.tag!.colour}" 
                         class="send-btn">Submit</div>
                 </div>
-            ` : html`<div @click="${() => this._navigateToAuth()}" class="auth-btn">Login or Register to reply</div>`
+            ` : html`<div @click="${() => this.dispatchEvent(new CustomEvent('should-login'))}" class="auth-btn">Login or Register to reply</div>`
         }
         `;
     }

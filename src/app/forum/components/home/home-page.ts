@@ -4,6 +4,10 @@ import { Route, routes } from "../../routes";
 import { toggleBottomSheet } from "../../actions/layout-actions";
 import { navigate } from "../../actions/router-actions";
 import { Post } from "../../interfaces/Post";
+import * as ui from 'firebaseui';
+import * as firebase from 'firebase/app';
+
+const dbUi = new ui.auth.AuthUI(firebase.auth());
 
 export class HomePage extends LitElement {
     @property({
@@ -38,6 +42,10 @@ export class HomePage extends LitElement {
         store.subscribe(() => {
             this._stateChanged();
         });
+
+        if (dbUi.isPendingRedirect()) {
+            this.requestLogin();
+        }
     }
 
     disconnectedCallback() {
@@ -56,8 +64,12 @@ export class HomePage extends LitElement {
             store.dispatch(navigate('new-post'));
         }
         else {
-            this.dispatchEvent(new CustomEvent('should-login'));
+            this.requestLogin();
         }
+    }
+
+    requestLogin = () => {
+        this.dispatchEvent(new CustomEvent('should-login'));
     }
 
     static get styles() {
@@ -144,7 +156,7 @@ export class HomePage extends LitElement {
                 `;
             }
             else if(this.route.routeName === 'post-page') {
-                return html`<post-page .post="${this.selectedPost}"></post-page>`;
+                return html`<post-page @should-login=${this.requestLogin} .post="${this.selectedPost}"></post-page>`;
             } else {
                 return html`
                     <h1>Hold on! This route isn't there yet!</h1>

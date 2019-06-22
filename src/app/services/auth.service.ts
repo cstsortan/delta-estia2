@@ -30,4 +30,12 @@ export class AuthService {
             size: 'lg'
         })
     }
+
+    getAuthState() {
+        return this.auth.authState;
+    }
+
+    logout() {
+        return this.auth.auth.signOut();
+    }
 }

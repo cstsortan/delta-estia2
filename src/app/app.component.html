@@ -1,13 +1,13 @@
 <div class="container-fluid pl-0 pr-0">
-  <cs-appbar>
+  <cs-appbar class="fixed-top sticky-top">
     <a class="navbar-brand">Delta Estia</a>
-    <button (click)="openDrawer()" slot="start" class="navbar-toggler h-100 d-flex align-items-center">
+    <button (click)="openDrawer()" slot="start" class="navbar-toggler h-100 d-flex align-items-center burger-btn">
       <fa-icon [icon]="faBars"></fa-icon>
     </button>
   </cs-appbar>
   <side-drawer #drawer>
     <div class="mx-2">
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav mr-auto mt-5">
         <!-- <li class="nav-link">
           <a routerLink="/" class="nav-link">Αρχική</a>
         </li> -->
@@ -35,6 +35,9 @@
           </li>
         <li *ngIf="isAdmin$|async" class="nav-link">
           <a routerLinkActive="active" class="nav-link" routerLink="/admin">Admin</a>
+        </li>
+        <li *ngIf="authState$|async">
+          <button class="btn btn-link" (click)="logout()">Αποσύνδεση</button>
         </li>
         <li class="nav-link">
           <button (click)="openUserFacingContentForm()" class="btn btn-outline-primary">

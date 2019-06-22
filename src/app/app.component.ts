@@ -6,6 +6,8 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { UserFacingContentFormComponent } from './user-facing-content-form/user-facing-content-form.component';
 import { Components } from 'cstsortan-components';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { User } from 'firebase/app';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -18,6 +20,7 @@ export class AppComponent {
   semesters$: Observable<Semester[]>;
 
   isAdmin$: Observable<boolean>;
+  authState$: Observable<User>;
 
   @ViewChild('drawer', {static: false}) drawer: ElementRef<Components.SideDrawer>;
 
@@ -25,10 +28,12 @@ export class AppComponent {
 
   constructor(
     private data: DataService,
+    private authService: AuthService,
     private modal: NgbModal,
   ) {
     this.semesters$ = data.getSemesters();
     this.isAdmin$ = data.isAdmin();
+    this.authState$ = authService.getAuthState();
   }
 
   openDrawer() {
@@ -41,6 +46,10 @@ export class AppComponent {
 
   openModal() {
     this.csModal.nativeElement.openModal();
+  }
+
+  logout() {
+    this.authService.logout();
   }
 
 }

@@ -3,7 +3,6 @@ import { AppUser } from "../../interfaces/app-user";
 import * as ui from 'firebaseui';
 
 export class DfUiAuth extends HTMLElement {
-
     connectedCallback() {
         const fbUi = ui.auth.AuthUI.getInstance() ||  new ui.auth.AuthUI(firebase.auth());
         fbUi.start(this, {
@@ -11,7 +10,7 @@ export class DfUiAuth extends HTMLElement {
                 {
                     provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
                     authMethod: 'https://accounts.google.com',
-                    clientId: '975027577006-qi4o5qo01uflacv6osvo42appm6jmg2u.apps.googleusercontent.com',
+                    clientId: '24506276035-7jlkfpoeqksbdi5koloaj9h94fak1npp.apps.googleusercontent.com',
                 },
                 // {
                 //     provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,

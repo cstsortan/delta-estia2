@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-auth-modal',
@@ -7,13 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthModalComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private modalRef: NgbActiveModal,
+  ) { }
 
   ngOnInit() {
   }
 
   signinSuccess() {
-    console.log("Success")
+    this.modalRef.close();
   }
 
 }
