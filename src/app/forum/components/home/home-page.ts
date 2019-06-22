@@ -105,7 +105,7 @@ export class HomePage extends LitElement {
                 margin-top: 47px;
             }
             .topPadding {
-                height: 72px;
+                height: 46px;
                 display: block;
             }
             @media only screen and (min-width: 800px) {

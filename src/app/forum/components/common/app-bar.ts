@@ -5,7 +5,7 @@ export class AppBar extends LitElement {
         return html`
         <style>
             :host {
-                margin-top: 72px;
+                margin-top: 46px;
             }
         .app-bar-style {
             display: flex;

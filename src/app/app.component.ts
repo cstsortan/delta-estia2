@@ -21,6 +21,8 @@ export class AppComponent {
 
   @ViewChild('drawer', {static: false}) drawer: ElementRef<Components.SideDrawer>;
 
+  @ViewChild('modal', {static: false}) csModal: ElementRef<Components.CsModal>;
+
   constructor(
     private data: DataService,
     private modal: NgbModal,
@@ -35,6 +37,10 @@ export class AppComponent {
 
   openUserFacingContentForm() {
     this.modal.open(UserFacingContentFormComponent);
+  }
+
+  openModal() {
+    this.csModal.nativeElement.openModal();
   }
 
 }
