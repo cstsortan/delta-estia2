@@ -1,5 +1,5 @@
 import { AppUser } from "./app-user";
-import { Post } from "./Post";
+import { Post } from "./post";
 
 export interface PostResponse {
     text: string;

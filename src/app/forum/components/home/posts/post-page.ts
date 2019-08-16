@@ -1,6 +1,6 @@
 import { LitElement, html, property } from "lit-element";
 import { store } from "../../../store";
-import { Post } from "../../../interfaces/Post";
+import { Post } from "../../../interfaces/post";
 import { getState$ } from "../../../utils/get-state";
 import { switchMap, first, map } from "rxjs/operators";
 import { getPostDoc, getPostResponses, addPostResponse } from "../../../services/posts-service";

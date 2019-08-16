@@ -24,4 +24,8 @@ export class CommentsListComponent implements OnInit {
     this.comments$ = this.postsService.getComments(this.postId);
   }
 
+  trackById(i, item) {
+    return item.id;
+  }
+
 }

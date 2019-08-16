@@ -3,7 +3,7 @@ import { store } from "../../store";
 import { Route, routes } from "../../routes";
 import { toggleBottomSheet } from "../../actions/layout-actions";
 import { navigate } from "../../actions/router-actions";
-import { Post } from "../../interfaces/Post";
+import { Post } from "../../interfaces/post";
 import * as ui from 'firebaseui';
 import * as firebase from 'firebase/app';
 

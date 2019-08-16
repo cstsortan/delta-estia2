@@ -1,6 +1,6 @@
-<div class="commentList">
+<div class="commentsList">
   <app-comment-item
-  *ngFor="let comment of comments$|async"
+  *ngFor="let comment of comments$|async; trackBy: trackById"
   [comment]="comment">
 
   </app-comment-item>

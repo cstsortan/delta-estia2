@@ -2,7 +2,7 @@ import { LitElement, html, property, query, customElement } from "lit-element";
 import { store } from "../../store";
 import { navigate } from "../../actions/router-actions";
 import { routes } from "../../routes";
-import { Post } from "../../interfaces/Post";
+import { Post } from "../../interfaces/post";
 import { Tag } from "../../interfaces/tag";
 import { addPost } from "../../services/posts-service";
 import { Subscription } from "rxjs";

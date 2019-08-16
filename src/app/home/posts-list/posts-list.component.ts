@@ -25,4 +25,8 @@ export class PostsListComponent implements OnInit {
     });
   }
 
+  trackById(i, item: any) {
+    return item.id;
+  }
+
 }

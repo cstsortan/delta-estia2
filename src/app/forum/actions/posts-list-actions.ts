@@ -1,6 +1,6 @@
 import { createStandardAction } from "typesafe-actions";
-import { Post } from "../interfaces/Post";
 import { Tag } from "../interfaces/tag";
+import { Post } from '../interfaces/post';
 
 export const updatePosts 
     = createStandardAction('posts-list/UPDATE_POSTS')<Post[]>();

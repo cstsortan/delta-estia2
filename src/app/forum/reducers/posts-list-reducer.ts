@@ -1,6 +1,6 @@
 import * as postsListActions from '../actions/posts-list-actions';
 import { getType, ActionType } from 'typesafe-actions';
-import { Post } from '../interfaces/Post';
+import { Post } from '../interfaces/post';
 import { Tag } from '../interfaces/tag';
 
 export type PostsListAction = ActionType<typeof postsListActions>;
