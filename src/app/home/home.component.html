@@ -1,7 +1,17 @@
-<div class="container">
-    <div class="d-flex w-100 justify-content-end">
-        <fa-icon (click)="createNewPost()" class="mt-2" [size]="'lg'" style="color: purple;" [icon]="faPlusCircle">
-        </fa-icon>
-    </div>
-    <app-posts-list></app-posts-list>
-</div>
+<ion-page class="ion-page">
+    <ion-content class="padding">
+        <div class="container">
+            <!-- <div class="d-flex w-100 justify-content-end">
+                <fa-icon (click)="createNewPost()" class="mt-2" [size]="'lg'" style="color: purple;" [icon]="faPlusCircle">
+                </fa-icon>
+            </div> -->
+            <app-posts-list></app-posts-list>
+
+        </div>
+        <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+            <ion-fab-button (click)="createNewPost()">
+                <ion-icon name="add"></ion-icon>
+            </ion-fab-button>
+        </ion-fab>
+    </ion-content>
+</ion-page>

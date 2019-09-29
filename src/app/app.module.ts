@@ -101,7 +101,7 @@ import { IonicModule } from '@ionic/angular';
     NgbModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     IonicModule.forRoot({
-      mode: "ios"
+      // mode: "ios"
     }),
   ],
   providers: [
