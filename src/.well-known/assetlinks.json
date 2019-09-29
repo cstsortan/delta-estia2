@@ -1,0 +1,15 @@
+[
+    {
+        "relation": [
+            "delegate_permission/common.handle_all_urls"
+        ],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "com.d4vinci.deltaestia",
+            "sha256_cert_fingerprints": [
+                "A9:A3:F3:B2:2D:CE:0F:4E:5C:C9:36:83:DD:76:C3:6C:B8:9C:2D:BE:8E:1C:7B:53:C4:59:AE:84:3F:15:A1:60",
+                "SHA256: F5:1F:25:4B:E8:58:A1:A6:BB:D6:4E:69:2F:18:1F:B0:C5:A8:44:23:CB:FA:3C:7E:B4:9E:5B:38:D2:F5:39:FE"
+            ]
+        }
+    }
+]
