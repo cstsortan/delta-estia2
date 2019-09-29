@@ -12,13 +12,13 @@ export class DfUiAuth extends HTMLElement {
                     authMethod: 'https://accounts.google.com',
                     clientId: '24506276035-7jlkfpoeqksbdi5koloaj9h94fak1npp.apps.googleusercontent.com',
                 },
-                // {
-                //     provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
-                //     requireDisplayName: true,
-                // }
+                {
+                    provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
+                    requireDisplayName: true,
+                }
             ],
             signInFlow: 'redirect',
-            credentialHelper: ui.auth.CredentialHelper.GOOGLE_YOLO,
+            credentialHelper: ui.auth.CredentialHelper.ACCOUNT_CHOOSER_COM,
             callbacks: {
                 signInSuccessWithAuthResult: (authResult, redirectUrl) => {
                     const user = authResult.user as firebase.User;
