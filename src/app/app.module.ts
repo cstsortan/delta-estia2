@@ -48,8 +48,8 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { TagsEditorComponent } from './admin/tags-editor/tags-editor.component';
 import { AuthModalComponent } from './auth-modal/auth-modal.component';
 
-import { defineCustomElements } from 'cstsortan-components/loader';
-defineCustomElements(window);
+// import { defineCustomElements } from 'cstsortan-components/loader';
+// defineCustomElements(window);
 import { TimeAgoPipe } from './pipes/timeago.pipe';
 
 import { IonicModule } from '@ionic/angular';

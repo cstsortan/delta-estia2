@@ -31,7 +31,7 @@ class PostsList extends connect(store)(LitElement) {
     }
 
     _createNewPost() {
-        store.dispatch(navigate('new-post'));
+        (this as unknown as LitElement).dispatchEvent(new CustomEvent('new-post-requested'));
     }
     
     loadMore() {

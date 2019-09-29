@@ -173,7 +173,7 @@ export class HomePage extends LitElement {
             `;
         } else {
             renderedPage = html`
-            <posts-list .posts="${this.posts}" class="no-scroll"></posts-list>
+            <posts-list @new-post-requested=${() => this.openNewPostForm()} .posts="${this.posts}" class="no-scroll"></posts-list>
             `;
         }
 
