@@ -49,6 +49,7 @@ import { TagsEditorComponent } from './admin/tags-editor/tags-editor.component';
 import { AuthModalComponent } from './auth-modal/auth-modal.component';
 
 import { defineCustomElements } from 'cstsortan-components/loader';
+import { TimeAgoPipe } from './pipes/timeago.pipe';
 defineCustomElements(window);
 
 @NgModule({
@@ -84,6 +85,7 @@ defineCustomElements(window);
     FoodComponent,
     TagsEditorComponent,
     AuthModalComponent,
+    TimeAgoPipe,
   ],
   imports: [
     BrowserModule,
