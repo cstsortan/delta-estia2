@@ -1,6 +1,6 @@
 <div class="postRoot">
   <p [class]="'postText color-'+post.color">{{post.text}}</p>
-  <img class="postImage" [src]="post.imageUrl" />
+  <img class="postImage" [src]="post.imageUrl" >
   <div class="postFloor">
     {{post.floor === -3 ? 'Ισόγειο' : (post.floor+3)+'ος Όροφος'}}
   </div>

@@ -22,6 +22,7 @@ constructor(
 ) {}
 
   getPosts(limit: number = 10): Observable<Post[]> {
+    console.log(limit)
     return this.db.collection<Post>('posts', ref => ref.orderBy('timestamp', 'desc').limit(limit))
     .snapshotChanges()
     .pipe(

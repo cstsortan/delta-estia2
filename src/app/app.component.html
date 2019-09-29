@@ -1,56 +1,119 @@
-<div class="container-fluid pl-0 pr-0">
-  <cs-appbar class="fixed-top sticky-top">
-    <a class="navbar-brand">Delta Estia</a>
-    <button (click)="openDrawer()" slot="start" class="navbar-toggler h-100 d-flex align-items-center burger-btn">
-      <fa-icon [icon]="faBars"></fa-icon>
-    </button>
-  </cs-appbar>
-  <side-drawer #drawer>
-    <div class="mx-2">
-      <ul class="navbar-nav mr-auto mt-5">
-        <!-- <li class="nav-link">
-          <a routerLink="/" class="nav-link">Αρχική</a>
-        </li> -->
-        <li class="nav-link">
-          <a class="nav-link" routerLinkActive="active" [routerLink]="'/'">Ανομολόγητα</a>
-        </li>
-        <li class="nav-link dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="first-yr" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Μαθήματα
-          </a>
-          <div class="dropdown-menu" aria-labelledby="first-yr">
-            <a *ngFor="let sem of semesters$|async" class="dropdown-item" routerLinkActive="active" routerLink="/semester/{{sem.id}}">{{sem.name}}
-              <!-- <span class="badge badge-info">{{sem.courses}}</span> -->
+<!-- <ion-app>
+  <div class="container-fluid pl-0 pr-0">
+    <cs-appbar class="fixed-top sticky-top">
+      <a class="navbar-brand">Delta Estia</a>
+      <button (click)="openDrawer()" slot="start" class="navbar-toggler h-100 d-flex align-items-center burger-btn">
+        <fa-icon [icon]="faBars"></fa-icon>
+      </button>
+    </cs-appbar>
+    <side-drawer #drawer>
+      <div class="mx-2">
+        <ul class="navbar-nav mr-auto mt-5">
+          <li class="nav-link">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="'/'">Ανομολόγητα</a>
+          </li>
+          <li class="nav-link dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="first-yr" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Μαθήματα
             </a>
-          </div>
-        </li>
-        <li class="nav-link">
-          <a routerLinkActive="active" class=nav-link routerLink="/useful-links">Χρήσιμα</a>
-        </li>
-        <li class="nav-link">
-          <a routerLinkActive="active" class=nav-link routerLink="/forum">Forum</a>
-        </li>
-        <li class="nav-link">
+            <div class="dropdown-menu" aria-labelledby="first-yr">
+              <a *ngFor="let sem of semesters$|async" class="dropdown-item" routerLinkActive="active"
+                routerLink="/semester/{{sem.id}}">{{sem.name}}
+              </a>
+            </div>
+          </li>
+          <li class="nav-link">
+            <a routerLinkActive="active" class=nav-link routerLink="/useful-links">Χρήσιμα</a>
+          </li>
+          <li class="nav-link">
+            <a routerLinkActive="active" class=nav-link routerLink="/forum">Forum</a>
+          </li>
+          <li class="nav-link">
             <a routerLinkActive="active" class=nav-link routerLink="/food">Φαγητό</a>
           </li>
-        <li *ngIf="isAdmin$|async" class="nav-link">
-          <a routerLinkActive="active" class="nav-link" routerLink="/admin">Admin</a>
-        </li>
-        <li *ngIf="authState$|async">
-          <button class="btn btn-link" (click)="logout()">Αποσύνδεση</button>
-        </li>
-        <li class="nav-link">
-          <button (click)="openUserFacingContentForm()" class="btn btn-outline-primary">
-            Προτείνετε περιεχόμενο
-          </button>
-        </li>
-      </ul>
+          <li *ngIf="isAdmin$|async" class="nav-link">
+            <a routerLinkActive="active" class="nav-link" routerLink="/admin">Admin</a>
+          </li>
+          <li *ngIf="authState$|async">
+            <button class="btn btn-link" (click)="logout()">Αποσύνδεση</button>
+          </li>
+          <li class="nav-link">
+            <button (click)="openUserFacingContentForm()" class="btn btn-outline-primary">
+              Προτείνετε περιεχόμενο
+            </button>
+          </li>
+        </ul>
+      </div>
+    </side-drawer>
+    <cs-modal #modal>
+
+    </cs-modal>
+    <div class="root">
+        <router-outlet></router-outlet>
     </div>
-  </side-drawer>
-  <cs-modal #modal>
-    
-  </cs-modal>
-  <div class="root">
-    <router-outlet></router-outlet>
   </div>
-</div>
+</ion-app> -->
+<ion-app>
+    <ion-split-pane when="sm">
+      <ion-menu>
+        <ion-header>
+          <ion-toolbar color="primary">
+            <ion-title>Menu</ion-title>
+          </ion-toolbar>
+        </ion-header>
+  
+        <ion-content>
+          <ion-list>
+            <ion-list-header>
+              Navigate
+            </ion-list-header>
+            <ion-menu-toggle auto-hide="false">
+              <ion-item button routerLinkActive="active" [routerLink]="'/'">
+                <ion-label>
+                  Ανομολόγητα
+                </ion-label>
+              </ion-item>
+              <ion-item (click)="openCourses()" button>
+                <ion-label>Μαθήματα</ion-label>
+              </ion-item>
+              <ion-item routerLink="/useful-links">
+                <ion-label>Χρήσιμα</ion-label>
+              </ion-item>
+              <ion-item routerLink="/forum">
+                <ion-label>Συζητήσεις</ion-label>
+              </ion-item>
+              <ion-item routerLink="/food">
+                <ion-label>Φαγητό</ion-label>
+              </ion-item>
+              <ion-item routerLink="/admin" button *ngIf="isAdmin$|async">
+                <ion-label>Admin</ion-label>
+              </ion-item>
+              <ion-item (click)="logout()" button *ngIf="authState$|async">
+                <ion-label>Αποσύνδεση</ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+          </ion-list>
+        </ion-content>
+      </ion-menu>
+  
+      <ion-page class="ion-page" main>
+        <ion-header>
+          <ion-toolbar>
+            <ion-buttons slot="start">
+              <ion-menu-toggle>
+                <ion-button>
+                  <ion-icon slot="icon-only" name="menu"></ion-icon>
+                </ion-button>
+              </ion-menu-toggle>
+            </ion-buttons>
+            <ion-title>Δέλτα Εστία</ion-title>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content class="padding">
+          <router-outlet></router-outlet>
+        </ion-content>
+      </ion-page>
+  
+    </ion-split-pane>
+  </ion-app>

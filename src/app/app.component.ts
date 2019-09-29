@@ -8,6 +8,9 @@ import { Components } from 'cstsortan-components';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { User } from 'firebase/app';
 import { AuthService } from './services/auth.service';
+import { ModalController } from '@ionic/angular';
+import { first } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -30,6 +33,7 @@ export class AppComponent {
     private data: DataService,
     private authService: AuthService,
     private modal: NgbModal,
+    private router: Router,
   ) {
     this.semesters$ = data.getSemesters();
     this.isAdmin$ = data.isAdmin();
@@ -50,6 +54,13 @@ export class AppComponent {
 
   logout() {
     this.authService.logout();
+  }
+
+  async openCourses() {
+    const sems = await this.semesters$.pipe(first()).toPromise();
+    if (sems && sems.length > 0) {
+      this.router.navigate([`semester`, sems[0].id])
+    }
   }
 
 }

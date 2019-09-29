@@ -49,8 +49,10 @@ import { TagsEditorComponent } from './admin/tags-editor/tags-editor.component';
 import { AuthModalComponent } from './auth-modal/auth-modal.component';
 
 import { defineCustomElements } from 'cstsortan-components/loader';
-import { TimeAgoPipe } from './pipes/timeago.pipe';
 defineCustomElements(window);
+import { TimeAgoPipe } from './pipes/timeago.pipe';
+
+import { IonicModule } from '@ionic/angular';
 
 @NgModule({
   declarations: [
@@ -98,6 +100,9 @@ defineCustomElements(window);
     FontAwesomeModule,
     NgbModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    IonicModule.forRoot({
+      mode: "ios"
+    }),
   ],
   providers: [
     DataService,
