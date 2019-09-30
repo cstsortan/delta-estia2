@@ -40,6 +40,10 @@ const routes: Routes = [
   {
     path: 'forum',
     loadChildren: './forum/forum.module#ForumModule',
+  },
+  {
+    path: 'washers',
+    loadChildren: './washers/washers.module#WashersModule'
   }
 ];
 
