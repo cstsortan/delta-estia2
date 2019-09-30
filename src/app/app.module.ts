@@ -48,6 +48,8 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { TagsEditorComponent } from './admin/tags-editor/tags-editor.component';
 import { AuthModalComponent } from './auth-modal/auth-modal.component';
 
+import { AngularFirePerformanceModule } from "@angular/fire/performance";
+
 // import { defineCustomElements } from 'cstsortan-components/loader';
 // defineCustomElements(window);
 import { TimeAgoPipe } from './pipes/timeago.pipe';
@@ -97,6 +99,7 @@ import { IonicModule } from '@ionic/angular';
     AngularFirestoreModule.enablePersistence(),
     AngularFireStorageModule,
     AngularFireAuthModule,
+    AngularFirePerformanceModule,
     FontAwesomeModule,
     NgbModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),

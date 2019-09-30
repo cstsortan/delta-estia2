@@ -5,6 +5,25 @@
                 <fa-icon (click)="createNewPost()" class="mt-2" [size]="'lg'" style="color: purple;" [icon]="faPlusCircle">
                 </fa-icon>
             </div> -->
+            <ion-card *ngIf="!hasSentFeedback">
+                <ion-card-header>
+                    <ion-card-title>Νεα εμφάνιση</ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                    Σας αρέσει η νέα εμφάνιση της εφαρμογής;
+                    <ion-input [(ngModel)]="userFeedbackComment" multiple class="my-2" type="text" placeholder="Σχόλια.."></ion-input>
+                    <ion-buttons slot="end">
+                        <ion-button (click)="onLike(false)">
+                            <ion-icon slot="start" name="remove"></ion-icon>
+                            Όχι
+                        </ion-button>
+                        <ion-button (click)="onLike(true)">
+                            <ion-icon slot="end" name="add"></ion-icon>
+                            Ναι
+                        </ion-button>
+                    </ion-buttons>
+                </ion-card-content>
+            </ion-card>
             <app-posts-list></app-posts-list>
 
         </div>
