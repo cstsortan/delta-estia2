@@ -17,7 +17,7 @@ export class DfUiAuth extends HTMLElement {
                     requireDisplayName: true,
                 }
             ],
-            signInFlow: 'redirect',
+            signInFlow: 'popup',
             credentialHelper: ui.auth.CredentialHelper.ACCOUNT_CHOOSER_COM,
             callbacks: {
                 signInSuccessWithAuthResult: (authResult, redirectUrl) => {

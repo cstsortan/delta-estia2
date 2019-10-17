@@ -49,6 +49,7 @@
     "timeago.js": "^4.0.0-beta.2",
     "tslib": "^1.9.0",
     "typesafe-actions": "^4.4.1",
+    "vue": "^2.6.10",
     "zone.js": "~0.9.1"
   },
   "engines": {

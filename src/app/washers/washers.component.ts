@@ -2,7 +2,7 @@ import { Component, OnInit, ChangeDetectionStrategy, ElementRef, ViewChild } fro
 
 @Component({
     selector: 'de-washers',
-    template: `
+    template: ` 
         <div #root></div>
     `,
     styleUrls: ['./washers.component.scss'],
