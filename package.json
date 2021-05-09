@@ -40,7 +40,7 @@
     "jquery": "^3.4.1",
     "lit-element": "^2.2.0",
     "lit-html": "^1.1.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "popper.js": "^1.15.0",
     "preact": "^8.5.2",
     "redux": "^4.0.1",
